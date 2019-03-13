@@ -25,6 +25,7 @@ describe('Main Component Tests', () => {
   describe('main component details', () => {
     const componentTestRenderer = TestRenderer.create(<RNSpeedometer
       value={value}
+      showLabel
     />);
 
     const wrapper = componentTestRenderer.toJSON();

@@ -44,6 +44,7 @@ class Speedometer extends Component {
       labelWrapperStyle,
       labelStyle,
       labelNoteStyle,
+      showLabel,
     } = this.props;
     const degree = 180;
     const perLevelDegree = calculateDegreeFromLabels(degree, labels);
@@ -127,11 +128,15 @@ class Speedometer extends Component {
           >
             {limitValue(value, minValue, maxValue)}
           </Text>
-          <Text style={
-            [style.labelNote, { color: label.labelColor }, labelNoteStyle]}
-          >
-            {label.name}
-          </Text>
+          {showLabel
+            && (
+            <Text style={
+              [style.labelNote, { color: label.labelColor }, labelNoteStyle]}
+            >
+              {label.name}
+            </Text>
+            )
+          }
         </View>
       </View>
     );
@@ -185,6 +190,7 @@ Speedometer.defaultProps = {
   labelWrapperStyle: {},
   labelStyle: {},
   labelNoteStyle: {},
+  showLabel: false,
 };
 
 Speedometer.propTypes = {
@@ -205,6 +211,7 @@ Speedometer.propTypes = {
   labelWrapperStyle: PropTypes.object,
   labelStyle: PropTypes.object,
   labelNoteStyle: PropTypes.object,
+  showLabel: PropTypes.bool,
 };
 
 export default Speedometer;
