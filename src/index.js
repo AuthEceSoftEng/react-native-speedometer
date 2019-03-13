@@ -126,17 +126,15 @@ class Speedometer extends Component {
           <Text style={
             [style.label, labelStyle]}
           >
-            {limitValue(value, minValue, maxValue)}
+            {`${limitValue(value, minValue, maxValue)} W`}
           </Text>
-          {showLabel
-            && (
-            <Text style={
-              [style.labelNote, { color: label.labelColor }, labelNoteStyle]}
-            >
-              {label.name}
-            </Text>
+          {showLabel === true
+            ? (
+              <Text style={[style.labelNote, { color: label.labelColor }, labelNoteStyle]}>
+                {label.name}
+              </Text>
             )
-          }
+            : null}
         </View>
       </View>
     );

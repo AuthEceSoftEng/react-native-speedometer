@@ -305,7 +305,7 @@ exports[`Main Component Tests main component details should render the component
         ]
       }
     >
-      50
+      50 W
     </Text>
     <Text
       style={
